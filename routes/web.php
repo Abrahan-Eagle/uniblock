@@ -36,8 +36,12 @@ use App\Models\Dashboard\LightDark;
 | contains the "web" middleware group. Now create something great!
 |
 
-Route::get('/', function () {
+Route::get('/users/{name}', function ($name) {
+    if($name){
+        return "hello, persons".$name;
+    }else{
     return view('welcome');
+    }
 });
 */
 
@@ -59,7 +63,22 @@ return "Cache is cleared";
 Route::get('/', [IndexController::class, 'index'])->name('home');
 Route::get('/about', [IndexController::class, 'about'])->name('about');
 
+Route::get('/about.html', 'Nosotros@nNosotrosA');
 
+Route::get('/spakers.html','NuestroE@nuestroe'());
+
+
+Route::get('/schedule.html','CronogramaA@cronograma');
+
+Route::get('/blog.html','Blog@blog');
+
+Route::get('/blog_details.html','Detallesb@blogD');
+
+Route::get('/elements.html','Elementos@elementos');
+
+Route::get('/contact.html','Contacto@contacto');
+
+Route::get('/index.html','HomeController@index'());
 //Route::get('/events', [EventsController::class, 'index']);
 //Route::get('/events/details/{id}', [EventsController::class, 'index'])
 //-> name('activity.details');
