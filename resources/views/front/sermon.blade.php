@@ -1,5 +1,5 @@
 @extends('welcome')
-@section('title','Blog - Iglesia Centro Refugio Hefzi-bá')
+@section('title','Blog - Uniblock')
 @section('content')
 
 <section id="home" class="video-hero js-fullheight" style="height: 700px; background-image: url(/images/front/banner/sermon.jpg);  background-size:cover; background-position: center center;background-attachment:fixed;" data-section="home">
@@ -23,16 +23,16 @@
 <section class="ftco-section">
   <div class="container">
     <div class="row">
-      
+
     @if ($posts -> isNotEmpty())
       @foreach ($posts as $post)
-          
-      
+
+
       <div class="col-md-4 ftco-animate">
         <div class="blog-entry">
-            
+
           <a href="{{ route('sermon.post', $post->slug) }}" class="block-20" style="background-image: url('/images/front/sermon/{{ $post -> img }}');"></a>
-         
+
           <div class="text p-4 d-block">
             <div class="meta mb-3">
               <div><a href="#">{{ date('d M Y', strtotime($post -> created_at)) }}</a></div>
@@ -45,7 +45,7 @@
       </div>
 
       @endforeach
-      
+
       @else
         <h1>NO HAY RESULTADO</h1>
       @endif
@@ -56,34 +56,34 @@
     <div class="row mt-5">
       <div class="col text-center">
         <div class="block-27">
-          
+
           @if ($posts->hasPages())
             <nav class="blog-pagination justify-content-center d-flex">
               <ul class="pagination">
-    
+
                 @if ($posts->onFirstPage())
                   <li class="disabled"><span>Atrás</span></li>
                 @else
                   <li><a href="{!! $posts->previousPageUrl() !!}">Atrás</a></li>
                 @endif
-      
+
                 @if ($posts->onFirstPage())
-      
+
                 @else
                   <li ><a  href="{!! $posts->previousPageUrl() !!}">{!! $posts->currentPage()-1 !!}</a></li>
                 @endif
-                
+
                 <li class="active">
                   <span >
                     {!! $posts->currentPage() !!}
                     <span class="sr-only">(current)</span>
                   </span>
                 </li>
-                
+
                 @if ($posts -> hasMorePages())
                   <li ><a  href="{!! $posts->nextPageUrl() !!}">{!! $posts->currentPage()+1 !!}</a></li>
                 @else
-                  
+
                 @endif
 
                 @if ($posts -> hasMorePages())
@@ -93,7 +93,7 @@
                 @endif
               </ul>
             </nav>
-          @endif 
+          @endif
 
         </div>
       </div>

@@ -1,5 +1,5 @@
 @extends('welcome')
-@section('title', 'Eventos - Iglesia Centro Refugio Hefzi-bá')
+@section('title', 'Eventos - Uniblock')
 @section('content')
 
 

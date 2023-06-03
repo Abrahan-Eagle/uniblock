@@ -1,11 +1,11 @@
 <footer class="c-footer">
     <div>
         Copyright &copy;
-        
-         All rights reserved | 
-         <a href="https://centrorefugiohefzi-ba.com" target="_blank">Centro Refugio Hefzi-bá</a> 
+
+         All rights reserved |
+         <a href="#" target="_blank">Uniblock</a>
     </div>
-    
+
     <!--
     <div class="ml-auto">
         Powered by&nbsp;

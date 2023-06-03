@@ -4,13 +4,13 @@
 <div class="c-sidebar c-sidebar-dark c-sidebar-fixed c-sidebar-lg-show" id="sidebar">
   <div class="c-sidebar-brand d-lg-down-none">
     <a href="{{ url('/') }}">
-      <svg class="c-sidebar-brand-full" width="250" height="46" alt="Centro Refugio Hefzi-bá Logo">
+      <svg class="c-sidebar-brand-full" width="250" height="46" alt="Uniblock Logo">
         <a href="{{ url('/') }}">
-          <text x="17" y="30" fill="#055e94" style="font-size: 20px">Centro Refugio Hefzi-bá</text>
+          <text x="17" y="30" fill="#055e94" style="font-size: 20px">Tecnologia - Uniblock</text>
       </svg>
 
-      <svg class="c-sidebar-brand-minimized" width="46" height="46" alt="Centro Refugio Hefzi-bá Logo">
-        <text x="0" y="30" fill="#055e94" style="font-size: 20px">CRH</text>
+      <svg class="c-sidebar-brand-minimized" width="46" height="46" alt="Uniblock Logo">
+        <text x="0" y="30" fill="#055e94" style="font-size: 26px"> TUB</text>
       </svg>
     </a>
   </div>
@@ -32,14 +32,14 @@
 
 <!--
 
-          
+
             <li class="c-sidebar-nav-item">
               <a class="c-sidebar-nav-link" href="">
               <svg class="c-sidebar-nav-icon">
                 <use xlink:href="{{asset('icons/sprites/free.svg#cil-address-book')}}"></use>
               </svg>Guia para el promotor</a>
             </li>
-          
+
 
           -->
 
@@ -63,8 +63,8 @@
               <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{ route('tags-event.index', ['level' => 'event']) }}"> Etiquetas</a></li>
               <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{ route('posts-event.index', ['level' => 'event']) }}"> Post</a></li>
               </ul>
-              </li> 
-
+              </li>
+<!--
 
           <li class="c-sidebar-nav-dropdown"><a class="c-sidebar-nav-dropdown-toggle" href="#">
             <svg class="c-sidebar-nav-icon">
@@ -76,7 +76,7 @@
             <li class="c-sidebar-nav-item"><a class="c-sidebar-nav-link" href="{{ route('posts-sermon.index', ['level' => 'sermon']) }}"> Post</a></li>
             </ul>
             </li>
-
+        -->
 
 
           <li class="c-sidebar-nav-dropdown"><a class="c-sidebar-nav-dropdown-toggle" href="#">
@@ -105,3 +105,4 @@
 </div>
 
 @endguest
+

@@ -1,5 +1,5 @@
 @extends('welcome')
-@section('title','Donaciones - Iglesia Centro Refugio Hefzi-bá')
+@section('title','Donaciones - Uniblock')
 @section('content')
 
 <!-- ******************************************************** MAIN ******************************************************* -->
@@ -130,10 +130,10 @@
               style="background-color: rgba(255, 255, 255, 0); color: var(--body_typography-color); font-family: var(--body_typography-font-family); font-size: var(--body_typography-font-size); font-style: var(--body_typography-font-style,normal); font-weight: var(--body_typography-font-weight); letter-spacing: var(--body_typography-letter-spacing);">555555555555555555555</span>
           </p>
           <p style="text-align: center;">Ambas cuentas a nombre de:</p>
-          <p>Iglesia Centro Refugio Hefzi-bá</p>
+          <p> Uniblock</p>
           <p>Rif: J-5555555-4</p>
           <p style="text-align: center;">O a través de Pago Móvil:</p>
-          <p style="text-align: center;">Cuenta Iglesia Centro Refugio Hefzi-bá:</p>
+          <p style="text-align: center;"> Uniblock:</p>
           <p>04145555555</p>
           <p>BANESCO (0134)</p>
           <p><span
@@ -141,7 +141,7 @@
               (0108)</span></p>
           <p>RIF: J-5555555-4</p>
           -->
-          
+
           <p style="text-align: center;">Si te encuentras fuera del país y deseas realizar un aporte voluntario, puedes
             hacerlo a través del siguiente enlace de PAYPAL:</p>
           <br>
@@ -151,7 +151,7 @@
 
 
           <!-- <p><span style="background-color: rgba(255, 255, 255, 0); color: var(--body_typography-color); font-family: var(--body_typography-font-family); font-size: var(--body_typography-font-size); font-style: var(--body_typography-font-style,normal); font-weight: var(--body_typography-font-weight); letter-spacing: var(--body_typography-letter-spacing);">(Desde 1$ hasta 4000$)</span></p>-->
-          
+
           <!--
           <p style="text-align: center;">Y si deseas hacerlo a través de Zelle, escríbenos al siguiente correo:</p>
           <p>contact@centrorefugiohefzi-ba.com</p>

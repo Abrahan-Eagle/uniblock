@@ -1,280 +1,605 @@
 @extends('welcome')
-@section('title','Iglesia Centro Refugio Hefzi-bá')
+@section('title','Tecnologia - UniBlock')
 @section('content')
 
-
-<!-- ******************************************************** MAIN ******************************************************* -->
-<section id="home" class="video-hero js-fullheight" style="height: 700px; background-image: url(images/front/banner/home.jpg);  background-size:cover; background-position: center center;background-attachment:fixed;" data-section="home">
-  <div class="overlay js-fullheight"></div>
-  <!-- <a class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=5m--ptwd_iI',containment:'#home', showControls:false, autoPlay:true, loop:true, mute:false, startAt:0, opacity:1, quality:'default'}"></a> -->
-  <div class="container">
-    <div class="row no-gutters slider-text js-fullheight align-items-center justify-content-center" data-scrollax-parent="true">
-      <div class="col-md-10 ftco-animate text-center" data-scrollax=" properties: { translateY: '70%' }">
-        <h1 class="mb-4" data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><u>Bienvenido a Centro Refugio Hefzi-bá </u><br> <font size=6>Proclamando <strong> El Reino de Dios </strong> a todas las naciones. </font></h1>
-        <!--<p data-scrollax="properties: { translateY: '30%', opacity: 1.6 }"><a href="#" class="btn btn-primary btn-outline-white px-4 py-3">Registrase</a></p>-->
-      </div>
-    </div>
-  </div>
-</section>
-
-
-
-
-<!-- ******************************************************** MAIN ******************************************************* -->
-
-
-<!-- ******************************************************* MODULO DE ACTIVITY ************************************************* -->
-
-@include('front.component.bible-study')
-
-<!-- ******************************************************* MODULO DE ACTIVITY ************************************************* -->
-
-
-@foreach ( $videohero as $videoheros)
-    
-<section class="ftco-section-2">
-  <div class="container-fluid">
-    <div class="section-2-blocks-wrapper d-flex row no-gutters">
-      <div class="img col-md-6 ftco-animate" style="background-image: url('images/front/banner/{{$videoheros->img}}');">
-        <a href="{{$videoheros->url_video}}" class="button popup-vimeo"><span class="ion-ios-play"></span></a>
-      </div>
-      <div class="text col-md-6 ftco-animate">
-        <div class="text-inner align-self-start">
-            
-          <h3 align='left'>{!! substr($videoheros['title'], 0, 105) !!}</h3>
-          <p align='justify'>{{ $videoheros -> content }}</p>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-@endforeach
-
-  <section class="ftco-section">
-    <div class="container">
-      <div class="row justify-content-center mb-5 pb-5">
-        <div class="col-md-8 text-center heading-section ftco-animate">
-          <span class="subheading">NUESTROS SERVICIOS</span>
-          <h2 class="mb-4">Porque eres importante para Dios</h2>
-          <p>A continuación te ofrecemos algunos de nuestros servicios como hermanos. Estando seguros que te serán de gran ayuda</p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-          <div class="media block-6 services d-block text-center">
-            <div class="d-flex justify-content-center"><div class="icon d-flex justify-content-center mb-3"><span class="align-self-center flaticon-planet-earth"></span></div></div>
-            <div class="media-body p-2 mt-3">
-              <h3 class="heading">Células Familiares</h3>
-              <p>Tenemos reuniones en los hogares donde procuramos que 1 Co.14:26 sea la guia para nuestros agapes. </p>
-            </div>
-          </div>      
-        </div>
-        <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-          <div class="media block-6 services d-block text-center">
-            <div class="d-flex justify-content-center"><div class="icon d-flex justify-content-center mb-3"><span class="align-self-center flaticon-maternity"></span></div></div>
-            <div class="media-body p-2 mt-3">
-              <h3 class="heading">Ministerios de atención</h3>
-              <p>Centro Refugio Hefzi-bá ofrece: Celebraciones dominicales, Celulas Fliares, Reuniones de Oración, Visitas Hospital.</p>
-            </div>
-          </div>      
-        </div>
-        <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-          <div class="media block-6 services d-block text-center">
-            <div class="d-flex justify-content-center"><div class="icon d-flex justify-content-center mb-3"><span class="align-self-center flaticon-pray"></span></div></div>
-            <div class="media-body p-2 mt-3">
-              <h3 class="heading">Petición de oración</h3>
-              <p>En C.R.H. Tenemos un equipo de intercesores por lo que puedes contactarnos y decirnos tus necesidades de oración.</p>
-            </div>
-          </div>    
-        </div>
-
-        <div class="col-md-6 col-lg-3 d-flex align-self-stretch ftco-animate">
-          <div class="media block-6 services d-block text-center">
-            <div class="d-flex justify-content-center"><div class="icon d-flex justify-content-center mb-3"><span class="align-self-center flaticon-podcast"></span></div></div>
-            <div class="media-body p-2 mt-3">
-              <h3 class="heading">Multimedia</h3>
-              <p>Te ofrecemos archivos Multimedias como predicaciones, testimonios, música, estudios, biblias.</p>
-            </div>
-          </div>      
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="ftco-section-parallax">
-    <div class="parallax-img d-flex align-items-center">
-      <div class="container">
-        <div class="row d-flex justify-content-center">
-          <div class="col-md-7 text-center heading-section heading-section-white ftco-animate">
-            <h2>Suscríbase a nuestro boletín</h2>
-            <p>Si deseas recibir en tu correo la información contínua de nuestras actividades y noticias importantes, envíanos tu email.</p>
-            <div class="row d-flex justify-content-center mt-5">
-              <div class="col-md-6">
-                  <form  action="{{ route('newsletter.submit') }}" method="POST" class="subscribe-form">
-                      @csrf
-                      <div class="form-group">
-                        <span class="icon icon-paper-plane"></span>
-                        <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''"
-                          onblur="this.placeholder = 'Enviar Correo Electronico'" placeholder='Enviar Correo Electronico' required>    
-                      </div>
-                  </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="ftco-section">
-    <div class="container">
-      <div class="row no-gutters justify-content-center mb-5 pb-5">
-        <div class="col-md-7 text-center heading-section ftco-animate">
-          <span class="subheading">Predicas</span>
-          <h2 class="mb-4">Mira nuestras predicaciones</h2>
-          <p>En este espacio queremos que usted sea bendecido por la palabra de Dios en su vida a travez de los estudios y predicaciones de grandes personas usadas por Dios.</p>
-        </div>
-      </div>
-      <div class="row">
-        
-        @foreach ( $sermon as $sermons )
-
-        <div class="col-md-4 ftco-animate">
-          <div class="sermons">
-            <a href="{{ route('sermon.post', ['slug' => $sermons -> slug]) }}" class="img mb-3 d-flex justify-content-center align-items-center" style="background-image: url(images/front/sermon/{{ $sermons -> img}} );"></a>
-            <div class="text">
-              <h3><a href="{{ route('sermon.post', ['slug' => $sermons -> slug]) }}">{{ $sermons -> title }} </a></h3>
-              <span class="position"> {{ $sermons -> name }}</span>
-            </div>
-          </div>
-        </div>
-        
-        @endforeach
-        
-     
-      </div>
-      <div class="row mt-5">
-        <div class="col text-center">
-        <p><a href="{{url('/sermons')}}" class="btn btn-primary btn-outline-primary p-3">Mira todas las predicaciones</a></p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  
-  <section class="ftco-section testimony-section bg-light">
-    <div class="container">
-      <div class="row justify-content-center mb-5 pb-5">
-        <div class="col-md-7 text-center heading-section ftco-animate">
-          <span class="subheading">LEA, INSPÍRESE Y COMPARTA SU HISTORIA</span>
-          <h2 class="mb-4">Micro Testimonios</h2>
-          <p>De modo que si alguno es nueva criatura en el Mesías, las cosas viejas pasaron; he aquí,° son hechas nuevas. 2 Corintios 5:17</p>
-        </div>
-      </div>
-      <div class="row ftco-animate">
-        <div class="col-md-12">
-          <div class="carousel-testimony owl-carousel ftco-owl">
-            
-            @foreach ( $testimonio as $testimonios)
-                
-            <div class="item text-center">
-              <div class="testimony-wrap p-4 pb-5">
-                <div class="user-img mb-4" style="background-image: url(images/user/{{$testimonios -> img}} )">
-                  <span class="quote d-flex align-items-center justify-content-center">
-                    <i class="icon-quote-left"></i>
-                  </span>
+<main>
+    <!--? slider Area Start-->
+    <div class="slider-area position-relative">
+        <div class="slider-active">
+            <!-- Single Slider -->
+            <div class="single-slider slider-height d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-8 col-md-9 col-sm-10">
+                            <div class="hero__caption">
+                                <span data-animation="fadeInLeft" data-delay=".1s">Comprometido con el éxito</span>
+                                <h1 style="font-size: 65px !important;" data-animation="fadeInLeft" data-delay=".5s">Tecnologia - Uniblock</h1>
+                                <p data-animation="fadeInLeft" data-delay=".1s">Comprometidos en ayudar a las empresas a alcanzar sus objetivos a través de soluciones de software de alta calidad para ser más eficientes y competitivos en el mercado.</p>
+                                <!-- Hero-btn -->
+                                <div class="slider-btns">
+                                    <!--<a data-animation="fadeInLeft" data-delay="1.0s" href="industries.html" class="btn hero-btn">Download</a>-->
+                                    <a data-animation="fadeInRight" data-delay="1.0s" class="popup-video video-btn"  href="https://www.youtube.com/watch?v=J-WiGnflRFo">
+                                        <i class="fas fa-play"></i></a>
+                                    <p class="video-cap d-none d-sm-blcok" data-animation="fadeInRight" data-delay="1.0s">Video<br> Ver</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="text">
-                  <p class="mb-5">{!! substr($testimonios['content'], 0, 190) !!}</p>
-                  <!-- <p class="name">Wistremiro Pulido</p>
-                  <span class="position">Pastorx</span> -->
+            </div>
+            <!-- Single Slider -->
+            <div class="single-slider slider-height d-flex align-items-center">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-xl-8 col-lg-8 col-md-9 col-sm-10">
+                            <div class="hero__caption">
+                                <span data-animation="fadeInLeft" data-delay=".1s">IA: Herramienta poderosa para innovación y crecimiento.</span>
+                                <h1 style="font-size: 65px !important;" data-animation="fadeInLeft" data-delay=".5s"> Inteligencia Artificial <p>Solo una Herramienta.</p></h1>
+                                <!-- Hero-btn -->
+                                <div class="slider-btns">
+                                    <a data-animation="fadeInRight" data-delay="1.0s" class="popup-video video-btn"  href="https://www.youtube.com/watch?v=_tA5cinv0U8">
+                                        <i class="fas fa-play"></i></a>
+                                    <p class="video-cap d-none d-sm-blcok" data-animation="fadeInRight" data-delay="1.0s">Videos<br> Ver</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
             </div>
-
-            @endforeach
-
-          </div>
         </div>
-      </div>
+        <!-- Counter Section Begin -->
+        <div class="counter-section d-none d-sm-block">
+            <div class="cd-timer" id="countdown" ></div>
+        </div>
+        <!-- Counter Section End -->
     </div>
-  </section>
+    <!-- slider Area End-->
+    <!--? About Law Start-->
+    <section class="about-low-area section-padding2">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-12">
+                    <div class="about-caption mb-50">
+                        <!-- Section Tittle -->
+                        <div class="section-tittle mb-35">
+                            <h3>Uniblock: Soluciones de vanguardia en tecnología y desarrollo de inteligencia artificial para impulsar tu negocio.</h3>
+                        </div>
+                        <p>En Uniblock, nuestra pasión por la tecnología y el desarrollo se refleja en cada proyecto. Te brindamos resultados excepcionales, calidad superior y un servicio al cliente excepcional. Nuestras soluciones de vanguardia en tecnología e inteligencia artificial impulsarán tu negocio, ya sea que representes una empresa consolidada o seas un emprendedor. Trabajaremos estrechamente contigo, entendiendo tus necesidades y ofreciendo soluciones personalizadas que se adapten a tu evolución constante. Confía en nosotros como tu socio de confianza para destacarte en tu industria. Con un equipo experimentado, te proporcionaremos las herramientas y el conocimiento necesarios para alcanzar el éxito en el desarrollo de aplicaciones móviles, implementación de inteligencia artificial y creación de plataformas de comercio electrónico. Nuestro compromiso se basa en soluciones vanguardistas, calidad superior y un soporte al cliente excepcional. Únete a Uniblock y juntos haremos realidad tus objetivos tecnológicos y empresariales, impulsando tu negocio hacia el futuro.</p>
+                    </div>
 
-  
-  
-  
-  <section class="ftco-section-2 bg-light">
-    <div class="container-fluid">
-      <div class="row no-gutters d-flex">
-        <div class="col-md-6 img d-flex justify-content-end align-items-center" style="background-image: url(images/front/banner/event1.jpg);">
-          <div class="col-md-7 heading-section text-sm-center text-md-right heading-section-white ftco-animate mr-md-5 mt-md-5">
-            <h2>Nuestros ultimos eventos</h2>
-            <p>Entra para que vea la Gloria y el Poder de Dios y su Victoria vivida en cada uno de los eventos que hemos realizado.</p>
-            <p><a href="{{url('/events')}}" class="btn btn-primary py-3 px-4">Ver nuestros Eventos</a></p>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="event-wrap">
-         
-         @foreach ( $events as $event)
-             
-            <div class="event-entry d-flex ftco-animate">
-              <div class="meta mr-4">
-                <p>
-                  <span>{{ date('d', strtotime($event -> date_activi)) }}</span>
-                  <span>{{ date('M Y', strtotime($event -> date_activi)) }}</span>
-                </p>
-              </div>
-                                                              
-              <div class="text">
-                <h3 class="mb-2"><a href="{{ route('event.post', ['slug' => $event -> slug]) }}">{!! substr($event['title'], 0, 100) !!} </a></h3>
-                <p class="mb-4"><span>{{ date('H:i A', strtotime($event -> date_activi)) }} en {{$event -> countries_name}} Edo. {{$event -> states_name}} {{$event -> cities_name}}  {{$event -> direccion}}</span></p>
-                <a href="{{ route('event.post', ['slug' => $event -> slug]) }}" class="img" style="background-image: url(/images/front/event/{{$event -> img}});"></a>
-              </div>
+                    <a href="#" class="btn mt-50">Nuestros Proyectos</a>
+                </div>
+                <div class="col-lg-6 col-md-12">
+                    <!-- about-img -->
+                    <div class="about-img ">
+                        <div class="about-font-img d-none d-lg-block">
+                            <img src="{{ asset('uniblock/img/gallery/about2.png') }}" alt="">
+                        </div>
+                        <div class="about-back-img ">
+                            <img src="{{ asset('uniblock/img/gallery/about1.png') }}" alt="">
+                        </div>
+                    </div>
+                </div>
             </div>
-            
-          @endforeach
-
-
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="ftco-section">
-    <div class="container">
-      <div class="row justify-content-center mb-5 pb-5">
-        <div class="col-md-7 text-center heading-section ftco-animate">
-          <span class="subheading">Blog</span>
-          <h2>Blog Recientes</h2>
-          <p>Dios esta presente siempre en todas las cosas a nuestro alrededor. y por eso esta nuestro blog para hablar temas puntuales para nuestras vidas en Dios.</p>
-        </div>
-      </div>
-      <div class="row">
-        
-        @foreach ( $posts as $post )
-
-
-        <div class="col-md-4 ftco-animate">
-          <div class="sermons">
-            <a href="{{ route('blog.post', ['slug' => $post -> slug]) }}" class="img mb-3 d-flex justify-content-center align-items-center" style="background-image: url(/images/front/blog/{{ $post -> img}} );"></a>
-            <div class="text">
-              <h3><a href="{{ route('blog.post', ['slug' => $post -> slug]) }}">{{ $post -> title }} </a></h3>
-              <span class="position"> {{ $post -> name }}</span>
+    </section>
+    <!-- About Law End-->
+    <!--? Brand Area Start -->
+    <section class="team-area pt-180 pb-100 section-bg" data-background="{{ asset('uniblock/img/gallery/section_bg02.png') }}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6 col-md-9">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle section-tittle2 mb-50">
+                        <h2>Nuestro Equipo.</h2>
+                        <p>Conoce a nuestro talentoso equipo de programadores, expertos en tecnología e innovación. Sus habilidades y pasión son la clave detrás de nuestros proyectos exitosos. Descubre cómo nuestros programadores están transformando el mundo de la tecnología con su experiencia y creatividad.</p>
+                        <a href="{{url('/about')}}" class="btn white-btn mt-30">Nuestro Equipo</a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-team mb-30">
+                        <div class="team-img">
+                            <img src="{{ asset('uniblock/img/gallery/team1.png') }}" alt="">
+                        </div>
+                        <div class="team-caption">
+                            <h3><a href="#">Renny Furneri</a></h3>
+                            <p> SEO Founder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-team mb-30">
+                        <div class="team-img">
+                            <img src="{{ asset('uniblock/img/gallery/team2.png') }}" alt="">
+                        </div>
+                        <div class="team-caption">
+                            <h3><a href="#">Guillermo Cerceau</a></h3>
+                            <p> Co Founder</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-team mb-30">
+                        <div class="team-img">
+                            <img src="{{ asset('uniblock/img/gallery/team3.png') }}" alt="">
+                        </div>
+                        <div class="team-caption">
+                            <h3><a href="#">Abrahan Pulido</a></h3>
+                            <p>Full-Stack Developer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-team mb-30">
+                        <div class="team-img">
+                            <img src="{{ asset('uniblock/img/gallery/team4.png') }}" alt="">
+                        </div>
+                        <div class="team-caption">
+                            <h3><a href="#">Wilfredo Zapata</a></h3>
+                            <p> Developer Frontend</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-team mb-30">
+                        <div class="team-img">
+                            <img src="{{ asset('uniblock/img/gallery/team6.png') }}" alt="">
+                        </div>
+                        <div class="team-caption">
+                            <h3><a href="#">Arnaldo Mujica</a></h3>
+                            <p> Developer Frontend</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="single-team mb-30">
+                        <div class="team-img">
+                            <img src="{{ asset('uniblock/img/gallery/team5.png') }}" alt="">
+                        </div>
+                        <div class="team-caption">
+                            <h3><a href="#">Johan Rojas</a></h3>
+                            <p> Developer Frontend</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        
-        @endforeach
-
-
-      </div>
+    </section>
+    <!-- Brand Area End -->
+    <!--? accordion -->
+    <section class="accordion fix section-padding30">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-xl-8 col-lg-6 col-md-6">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle text-center mb-80">
+                        <h2>Calendario de eventos</h2>
+                        <p>Explora nuestro calendario de eventos y mantente al tanto de las últimas conferencias, seminarios y webinars en tecnología e inteligencia artificial. Únete a nosotros mientras nos sumergimos en el mundo de la innovación y descubrimos nuevas oportunidades juntos.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row ">
+               <div class="col-lg-11">
+                    <div class="properties__button mb-40">
+                        <!--Nav Button  -->
+                        <nav>
+                            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Dia - 01</a>
+                         <!--       <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false"> Day - 02</a>
+                                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false"> Day - 03 </a>
+                                <a class="nav-item nav-link" id="nav-dinner-tab" data-toggle="tab" href="#nav-dinner" role="tab" aria-controls="nav-dinner" aria-selected="false"> Day - 04 </a>-->
+                            </div>
+                        </nav>
+                        <!--End Nav Button  -->
+                    </div>
+               </div>
+            </div>
+        </div>
+        <div class="container">
+            <!-- Nav Card -->
+            <div class="tab-content" id="nav-tabContent">
+                <!-- card one -->
+                <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                   <div class="row">
+                        <div class="col-lg-11">
+                            <div class="accordion-wrapper">
+                                <div class="accordion" id="accordionExample">
+                                    <!-- single-one -->
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h2 class="mb-0">
+                                                <a href="#" class="btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                                    <span>2:00 PM - 4:00 PM</span> </BR>
+                                                    <span>LUGAR: UNITEC VALENCIA </BR>
+                                                        FECHA: 8 DE JUNIO DE 2023 INDEPENDIENTES Y PUBLICO EN GENERAL</span>
+                                                    <p>INTELIGENCIA ARTIFICIAL SOLO UNA - HERRAMIENTA</p>
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                Descubre cómo la inteligencia artificial se convierte en una poderosa herramienta para impulsar la innovación y el crecimiento.
+                                                <p>Guillermo Cerceau - Consultor en nuevas tecnologias <BR>
+                                                    Renny H Furneri - CEO Uniblock</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- single-two
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h2 class="mb-0">
+                                                <a href="#" class="btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                                    <span>8:30 AM - 9:30 AM</span>
+                                                    <p>Opening conference</p>
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
+                                            </div>
+                                        </div>
+                                    </div>-->
+                                    <!-- single-three
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h2 class="mb-0">
+                                                <a href="#" class="btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                                    <span>8:30 AM - 9:30 AM</span>
+                                                    <p>Conference ending</p>
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
+                                            </div>
+                                        </div>
+                                    </div>-->
+                                </div>
+                            </div>
+                        </div>
+                   </div>
+                </div>
+                <!-- Card two -->
+                <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                    <div class="row">
+                        <div class="col-lg-11">
+                            <div class="accordion-wrapper">
+                                <div class="accordion" id="accordionExample">
+                                    <!-- single-one -->
+                                    <div class="card">
+                                        <div class="card-header" id="headingTwo">
+                                            <h2 class="mb-0">
+                                                <a href="#" class="btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo2" aria-expanded="false" aria-controls="collapseTwo2">
+                                                    <span>8:30 AM - 9:30 AM</span>
+                                                    <p>Snackes</p>
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseTwo2" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- single-two -->
+                                    <div class="card">
+                                        <div class="card-header" id="headingOne">
+                                            <h2 class="mb-0">
+                                                <a href="#" class="btn-link" data-toggle="collapse" data-target="#collapseOne1" aria-expanded="true" aria-controls="collapseOne1">
+                                                    <span>8:30 AM - 9:30 AM</span>
+                                                    <p>Opening conference</p>
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseOne1" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- single-three -->
+                                    <div class="card">
+                                        <div class="card-header" id="headingThree">
+                                            <h2 class="mb-0">
+                                                <a href="#" class="btn-link collapsed" data-toggle="collapse" data-target="#collapseThree3" aria-expanded="false" aria-controls="collapseThree3">
+                                                    <span>8:30 AM - 9:30 AM</span>
+                                                    <p>Conference ending</p>
+                                                </a>
+                                            </h2>
+                                        </div>
+                                        <div id="collapseThree3" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                            <div class="card-body">
+                                                There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Card three -->
+                <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                    <div class="row">
+                            <div class="col-lg-11">
+                                <div class="accordion-wrapper">
+                                    <div class="accordion" id="accordionExample">
+                                        <!-- single-one -->
+                                        <div class="card">
+                                            <div class="card-header" id="headingTwo">
+                                                <h2 class="mb-0">
+                                                    <a href="#" class="btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo01" aria-expanded="false" aria-controls="collapseTwo01">
+                                                        <span>8:30 AM - 9:30 AM</span>
+                                                        <p>Snackes</p>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseTwo01" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single-two -->
+                                        <div class="card">
+                                            <div class="card-header" id="headingOne">
+                                                <h2 class="mb-0">
+                                                    <a href="#" class="btn-link" data-toggle="collapse" data-target="#collapseOne02" aria-expanded="true" aria-controls="collapseOne02">
+                                                        <span>8:30 AM - 9:30 AM</span>
+                                                        <p>Opening conference</p>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseOne02" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single-three -->
+                                        <div class="card">
+                                            <div class="card-header" id="headingThree">
+                                                <h2 class="mb-0">
+                                                    <a href="#" class="btn-link collapsed" data-toggle="collapse" data-target="#collapseThree03" aria-expanded="false" aria-controls="collapseThree03">
+                                                        <span>8:30 AM - 9:30 AM</span>
+                                                        <p>Conference ending</p>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseThree03" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <!-- Card Four -->
+                <div class="tab-pane fade" id="nav-dinner" role="tabpanel" aria-labelledby="nav-dinner">
+                    <div class="row">
+                            <div class="col-lg-11">
+                                <div class="accordion-wrapper">
+                                    <div class="accordion" id="accordionExample">
+                                        <!-- single-one -->
+                                        <div class="card">
+                                            <div class="card-header" id="headingTwo">
+                                                <h2 class="mb-0">
+                                                    <a href="#" class="btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo10" aria-expanded="false" aria-controls="collapseTwo10">
+                                                        <span>8:30 AM - 9:30 AM</span>
+                                                        <p>Snackes</p>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseTwo10" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single-two -->
+                                        <div class="card">
+                                            <div class="card-header" id="headingOne">
+                                                <h2 class="mb-0">
+                                                    <a href="#" class="btn-link" data-toggle="collapse" data-target="#collapseOne20" aria-expanded="true" aria-controls="collapseOne20">
+                                                        <span>8:30 AM - 9:30 AM</span>
+                                                        <p>Opening conference</p>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseOne20" class="collapse" aria-labelledby="headingOne" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- single-three -->
+                                        <div class="card">
+                                            <div class="card-header" id="headingThree">
+                                                <h2 class="mb-0">
+                                                    <a href="#" class="btn-link collapsed" data-toggle="collapse" data-target="#collapseThree30" aria-expanded="false" aria-controls="collapseThree30">
+                                                        <span>8:30 AM - 9:30 AM</span>
+                                                        <p>Conference ending</p>
+                                                    </a>
+                                                </h2>
+                                            </div>
+                                            <div id="collapseThree30" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                                                <div class="card-body">
+                                                    There arge many variations ohf passages of sorem gpsum ilable, but the majority have suffered alteration in some form, by ected humour, or randomised words whi.rere arge many variations ohf passages of sorem gpsum ilable.
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End Nav Card -->
+        </div>
+    </section>
+    <!-- accordion End -->
+    <!--? gallery Products Start -->
+    <div class="gallery-area fix">
+        <div class="container-fluid p-0">
+            <div class="row no-gutters">
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="gallery-box">
+                        <div class="single-gallery">
+                            <div class="gallery-img " style="background-image: url(uniblock/img/gallery/gallery2.png);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="gallery-box">
+                        <div class="single-gallery">
+                            <div class="gallery-img " style="background-image: url(uniblock/img/gallery/gallery2.png);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="gallery-box">
+                        <div class="single-gallery">
+                            <div class="gallery-img " style="background-image: url(uniblock/img/gallery/gallery3.png);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6 col-sm-6">
+                    <div class="gallery-box">
+                        <div class="single-gallery">
+                            <div class="gallery-img " style="background-image: url(uniblock/img/gallery/gallery4.png);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="gallery-box">
+                        <div class="single-gallery">
+                             <div class="gallery-img " style="background-image: url(uniblock/img/gallery/gallery5.png);"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-6">
+                    <div class="gallery-box">
+                        <div class="single-gallery">
+                            <div class="gallery-img " style="background-image: url(uniblock/img/gallery/gallery6.png);"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </section>
+    <!-- gallery Products End -->
 
+    <!--? Brand Area Start-->
+    <section class="work-company section-padding30" style="background: #2e0e8c;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-8">
+                    <!-- Section Tittle -->
+                    <div class="section-tittle section-tittle2 mb-50">
+                        <h2>Nuestros proyectos mas destacados.</h2>
+                        <p>Navega por nuestros proyectos destacados en servicios tecnológicos e informáticos, donde hemos demostrado nuestra excelencia y experiencia en soluciones innovadoras.</p>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="logo-area">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="single-logo mb-30">
+                                    <img src="{{ asset('uniblock/img/gallery/cisco_brand.png') }}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="single-logo mb-30">
+                                    <img src="{{ asset('uniblock/img/gallery/cisco_brand.png') }}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="single-logo mb-30">
+                                    <img src="{{ asset('uniblock/img/gallery/cisco_brand.png') }}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="single-logo mb-30">
+                                    <img src="{{ asset('uniblock/img/gallery/cisco_brand.png') }}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="single-logo mb-30">
+                                    <img src="{{ asset('uniblock/img/gallery/cisco_brand.png') }}" alt="">
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-4 col-sm-6">
+                                <div class="single-logo mb-30">
+                                    <img src="{{ asset('uniblock/img/gallery/cisco_brand.png') }}" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Brand Area End-->
+    <!--? Blog Area Start -->
+    <section class="home-blog-area section-padding30">
+        <div class="container">
+            <!-- Section Tittle -->
+            <div class="row justify-content-center">
+                <div class="col-lg-8 col-md-8">
+                    <div class="section-tittle text-center mb-50">
+                        <h2>Noticias Tecnologicas</h2>
+                        <p>Mantente al día con las últimas noticias tecnológicas, avances en inteligencia artificial y programación en nuestro bloque dedicado. Explora artículos, tendencias y descubre cómo la tecnología está moldeando nuestro futuro. Únete a la conversación y mantente informado sobre los desarrollos más recientes en el mundo digital.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="home-blog-single mb-30">
+                        <div class="blog-img-cap">
+                            <div class="blog-img">
+                                <img src="{{ asset('uniblock/img/gallery/blog1.png') }}" alt="">
+                                <!-- Blog date -->
+                                <div class="blog-date text-center">
+                                    <span>3</span>
+                                    <p>Marzo</p>
+                                </div>
+                            </div>
+                            <div class="blog-cap">
+                                <p>|   Inteligencia Artificial</p>
+                                <h3><a href="#">El Futuro de la Inteligencia Artificial: Innovación Imparable</a></h3>
+                                <a href="#" class="more-btn">Leer Mas »</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6">
+                    <div class="home-blog-single mb-30">
+                        <div class="blog-img-cap">
+                            <div class="blog-img">
+                                <img src="{{ asset('uniblock/img/gallery/blog1.png') }}" alt="">
+                                <!-- Blog date -->
+                                <div class="blog-date text-center">
+                                    <span>25</span>
+                                    <p>Mayo</p>
+                                </div>
+                            </div>
+                            <div class="blog-cap">
+                                <p>|   Programacion</p>
+                                <h3><a href="#">Vue.js: Potenciando el Desarrollo Web Moderno</a></h3>
+                                <a href="%" class="more-btn">Leer Mas »</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Blog Area End -->
+    </main>
 
 @endsection
-  

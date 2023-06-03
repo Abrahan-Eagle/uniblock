@@ -116,7 +116,7 @@
 
 <!-- Some preview text. -->
 <div style="display: none; max-height: 0; overflow: hidden;">
-		
+
 </div>
 <!-- Get rid of unwanted preview text. -->
 <div style="display: none; max-height: 0px; overflow: hidden;">
@@ -140,7 +140,7 @@
                                             <td bgcolor="#ffffff" width="400" align="right" class="mobile-hide">
                                                 <table role="presentation" border="0" cellpadding="0" cellspacing="0">
                                                     <tr>
-                                                        <td align="right" style="padding: 0 0 5px 0; font-size: 14px; font-family: Arial, sans-serif; color: #666666; text-decoration: none;"><span style="color: #666666; text-decoration: none;">Contactanos - Centro Refugio Hefzi-bá.<br>Email de Contactanos.</span></td>
+                                                        <td align="right" style="padding: 0 0 5px 0; font-size: 14px; font-family: Arial, sans-serif; color: #666666; text-decoration: none;"><span style="color: #666666; text-decoration: none;">Contactanos - Uniblock<br>Email de Contactanos.</span></td>
                                                     </tr>
                                                 </table>
                                             </td>
@@ -189,19 +189,19 @@
                                     <!-- COPY -->
                                     <table role="presentation" width="100%" border="0" cellspacing="0" cellpadding="0">
                                         <tr>
-                                            <td align="center" style="font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333; padding-top: 30px;" class="padding-copy">Tiene una nueva mención en Contactanos de Centro Refugio Hefzi-bá.</td>
+                                            <td align="center" style="font-size: 25px; font-family: Helvetica, Arial, sans-serif; color: #333333; padding-top: 30px;" class="padding-copy">Tiene una nueva mención en Contactanos de Uniblock.</td>
                                         </tr>
                                         <tr>
-                                            <td align="left" style="padding: 20px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy"> <b>Asunto:</b>  {{ $data['subject'] }} <br> <b>Nombre y Apellido:</b> {{ $data['name'] }} <br> <b>Email:</b> {{ $data['email'] }} </td> 
+                                            <td align="left" style="padding: 20px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy"> <b>Asunto:</b>  {{ $data['subject'] }} <br> <b>Nombre y Apellido:</b> {{ $data['name'] }} <br> <b>Email:</b> {{ $data['email'] }} </td>
                                         </tr>
                                         <tr>
                                             <td align="center" style="padding: 20px 0 0 0; font-size: 16px; line-height: 25px; font-family: Helvetica, Arial, sans-serif; color: #666666;" class="padding-copy">{{ $data['message'] }}</td>
                                         </tr>
 
 
-                                        
-                                        
-                                        
+
+
+
 
                                     </table>
                                 </td>

@@ -1,6 +1,6 @@
 @extends('welcome')
 <?php $titleTag = htmlspecialchars($post->title); ?>
-@section('title', "Iglesia Centro Refugio Hefzi-bá | $titleTag")
+@section('title', "Uniblock | $titleTag")
 @section('content')
 
     <section id="home" class="video-hero js-fullheight"
@@ -37,7 +37,7 @@
                     <h1 class="mb-3"> {!! substr($post['title'], 0, 92) !!} </h1>
                     <h6 style="color: #055e94;" class="mb-3"> <b> {!! $post->excerpt !!} </b></h6>
                     <br>
-                    
+
                     @if ($post -> url_video == true)
                         <div class="sermons2" style="margin-bottom: 0em">
                             <a type="button" class="img mb-3 d-flex justify-content-center align-items-center" style="background-image: url(/images/front/blog/{{ $post -> img }});" data-toggle="modal" data-target="#exampleModal2">
@@ -53,7 +53,7 @@
                         </div>
 
                     @else
-                            
+
                     @endif
 
                     <div class="block-21 mb-4 d-flex">
@@ -63,34 +63,34 @@
                           <div><a href="#"><span class="icon-eye"></span> @if( $post->views >= 1 ) {!! $post->views !!} @else {!! $post->views !!}  @endif visualizaciones</a></div>
                           <div><a href="#"><span class="icon-calendar"></span> {!! date('d M Y', strtotime($post -> created_at)) !!}</a></div>
                           <div><a href="#"><span class="icon-chat"></span> {{ count($comment) }}</a></div>
-                          
 
-                        
-    
-                            <div><a 
+
+
+
+                            <div><a
                                 @foreach($iplike as $value)
                                 @if($value->REMOTE_ADDR_like == true) style="color: #007bff !important" @else @endif
                                 @endforeach
                             href="{{ route('blog.like', ['slug' => $post->slug]) }}"><span class="icon-thumbs-up"></span>
                             @if ($like -> isNotEmpty()) @foreach($like as $likes) {{ $likes->like }} @endforeach @else 0 @endif
                             </a></div>
-                            
-                            <div><a 
+
+                            <div><a
                                 @foreach($iplike as $value)
-                                @if($value->REMOTE_ADDR_dislike == true) style="color: #007bff !important" @else @endif 
+                                @if($value->REMOTE_ADDR_dislike == true) style="color: #007bff !important" @else @endif
                                 @endforeach
                                 href="{{ route('blog.dislike', ['slug' => $post->slug]) }}"><span class="icon-thumbs-down"></span>
                             @if ($like -> isNotEmpty()) @foreach($like as $likes) {{ $likes->dislike }} @endforeach @else 0 @endif
                             </a></div>
-                        
-                        
-                            
-                          
+
+
+
+
                         </div>
                       </div>
                     </div>
-                        
-                
+
+
                     <div class="tag-widget post-tag-container mb-1 mt-1">
                         <h5>Categorias</h5>
                         <div class="tagcloud">
@@ -119,7 +119,7 @@
 
                     @foreach($author as $authors)
                     <div class="about-author d-flex p-5 bg-light">
-                        
+
                         <div class="bio align-self-md-center mr-5">
                             <img src="/images/user/author/{{ $authors->img }}" alt="Image placeholder" class="img-fluid rounded-circle mb-4">
                         </div>
@@ -127,7 +127,7 @@
                             <h3> {!! $authors->name !!} </h3>
                             <p>{!! $authors->content !!}</p>
                         </div>
-                        
+
                     </div>
                     @endforeach
 
@@ -143,16 +143,16 @@
                                 <div class="vcard bio">
                                     <img src="/images/user/{{ $comments->img }}" alt="Image placeholder">
                                 </div>
-                                
+
                                 <div class="comment-body">
                                     <h3> {!! $comments -> name !!} </h3>
                                     <div class="meta"> {!! date('d M Y', strtotime($comments -> created_at)) !!} </div>
                                     <p> {!! $comments-> comment !!} </p>
                                     <p><button type="button" class="reply" data-toggle="modal" data-target="#exampleModal" data-whatever="{!! $comments-> id !!}">Respuesta</button></p>
                                 </div>
-                            
+
                                 @foreach($comments->reply as $replys)
-    
+
                                 <ul class="children">
                                     <li class="comment">
                                         <div class="vcard bio">
@@ -219,7 +219,7 @@
                     <!-- COMENTARIOS FIN-->
 
 
-              
+
 
                 </div> <!-- .col-md-8 -->
                 <div class="col-md-4 sidebar ftco-animate order-first fadeInUp ftco-animated">
@@ -305,7 +305,7 @@
                         <h3>BTX - La Bíblia Textual</h3>
                         <p>Esta es la Bíblia versión Textual, disponible de manera offline.</p>
                         <p>Ideal para estudios exegéticos de las escrituras, ya que permite conocer más precisamente el contenido original del texto bíblico.</p>
-                        
+
                         <a class="btn btn-lg btn-success big-btn android-btn" href="https://play.google.com/store/apps/details?id=number.seven.apps.btx&hl=es_PA" target="_blank">
                             <div class="row">
                                 <div class="container">
@@ -318,14 +318,14 @@
                                 </div>
                             </div>
                         </a>
-                        
+
                     </div>
                 </div>
 
             </div>
         </div>
     </section> <!-- .section -->
-    
+
 @include('front.component.reply')
 @include('front.component.modal-youtube')
 

@@ -20,10 +20,10 @@
         <use xlink:href="{{asset('icons/sprites/free.svg#cil-menu')}}"></use>
       </svg>
     </button><a class="c-header-brand d-lg-none" href="{{ url('/') }}">
-      <svg class="c-sidebar-brand-full" width="300" height="146" alt="Centro Refugio Hefzi-bá Logo">
+      <svg class="c-sidebar-brand-full" width="300" height="146" alt="Uniblock Logo">
         <!-- <use xlink:href="assets/brand/coreui-pro.svg#full"></use>
         <use xlink:href="{{asset('assets/brand/coreui.svg#full')}}"></use> -->
-        <text x="30" y="80" fill="#055e94" style="font-size: 25px">Centro Refugio Hefzi-bá</text>
+        <text x="30" y="80" fill="#055e94" style="font-size: 25px">Uniblock</text>
       </svg></a>
     <button class="c-header-toggler c-class-toggler mfs-3 d-md-down-none" type="button" data-target="#sidebar"
       data-class="c-sidebar-lg-show" responsive="true">
@@ -34,9 +34,9 @@
     </button>
     <ul class="c-header-nav d-md-down-none">
       <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="{{ url('/') }}">Home</a></li>
-          
 
-      
+
+
       <!--
       <li class="c-header-nav-item px-3">
         <a class="btn btn-ghost-info"
@@ -47,20 +47,20 @@
         </a>
       </li>
     -->
-          
-      
+
+
       <li class="c-header-nav-item dropdown">
-        
-        
+
+
         <div class="dropdown-menu dropdown-menu-right pt-0">
-          
+
           <div class="dropdown-divider"></div>
 
-        
+
         </div>
       </li>
 
-    
+
 
 
       <!-- <li class="c-header-nav-item px-3"><a class="c-header-nav-link" href="{{ url('/home') }}">Dashboard</a></li>
@@ -126,7 +126,7 @@
          <form action="{{ route('update.light') }}" method="get" class="needs-validation" accept-charset="UTF-8"
           enctype="multipart/form-data">
 
-          
+
 
           <!-- <button class="btn btn-block btn-facebook" type="submit"><span>Register</span></button> -->
 
@@ -355,20 +355,20 @@
               <use xlink:href="{{asset('icons/sprites/free.svg#cil-bell')}}"></use>
             </svg> Updates<span class="badge badge-info mfs-auto">42</span>
           </a>
-            
-            
+
+
           <a class="dropdown-item" href="#">
             <svg class="c-icon mfe-2">
               <use xlink:href="{{asset('icons/sprites/free.svg#cil-envelope-open')}}"></use>
             </svg> Messages<span class="badge badge-success mfs-auto">42</span>
           </a>
-          
+
           <a class="dropdown-item" href="#">
             <svg class="c-icon mfe-2">
               <use xlink:href="{{asset('icons/sprites/free.svg#cil-task')}}"></use>
             </svg>Tasks<span class="badge badge-danger mfs-auto">42</span>
           </a>
-          
+
           <a class="dropdown-item" href="#">
             <svg class="c-icon mfe-2">
               <use xlink:href="{{asset('icons/sprites/free.svg#cil-comment-square')}}"></use>
@@ -396,7 +396,7 @@
           </a>
           @endcan
 
-          
+
 
 
 
@@ -408,9 +408,9 @@
 
             <svg class="c-icon mfe-2">
               <use xlink:href="{{asset('icons/sprites/free.svg#cil-credit-card')}}"></use>
-            </svg> 
-            
-            
+            </svg>
+
+
             Payments<span class="badge badge-secondary mfs-auto">42</span></a>
             <a class="dropdown-item" href="#">
 
