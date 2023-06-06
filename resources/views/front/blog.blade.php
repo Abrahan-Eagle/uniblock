@@ -44,10 +44,7 @@
                                 <a href="{{ route('blog.post', $post->slug) }}">
                                     <p>{!! substr($post['excerpt'], 0, 250) !!}</p>
                                 </a>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                </ul>
+
                             </div>
                         </article>
 
@@ -123,75 +120,28 @@
                                     type="submit">Buscar</button>
                             </form>
                         </aside>
-                        <aside class="single_sidebar_widget post_category_widget">
-                            <h4 class="widget_title" style="color: #2d2d2d;">Categoria</h4>
-                            <ul class="list cat-list">
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Resaurant food</p>
-                                        <p>(37)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Travel news</p>
-                                        <p>(10)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Modern technology</p>
-                                        <p>(03)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Product</p>
-                                        <p>(11)</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Inspiration</p>
-                                        <p>21</p>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#" class="d-flex">
-                                        <p>Health Care (21)</p>
-                                        <p>09</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </aside>
+
+                   <aside class="single_sidebar_widget post_category_widget">
+                    <h4 class="widget_title" style="color: #2d2d2d;">Categorias</h4>
+                    <ul class="list cat-list">
+
+                      @foreach ($categories as $category)
+                      <li><a  class="d-flex" href="{{ route('blog.categories', ['slug' => $category->slug]) }}">{{ $category->title }}
+                              <span>({{ count($category->posts) }})</span> </a></li>
+                      @endforeach
+
+                    </ul>
+                 </aside>
+
 
                         <aside class="single_sidebar_widget tag_cloud_widget">
                             <h4 class="widget_title" style="color: #2d2d2d;">Etiquetas</h4>
                             <ul class="list">
+                                @foreach ($post->tags as $tag)
                                 <li>
-                                    <a href="#">project</a>
+                                <a href="{{ route('blog.tag', ['slug' => $tag->slug]) }}">{{ $tag->title }}</a>
                                 </li>
-                                <li>
-                                    <a href="#">love</a>
-                                </li>
-                                <li>
-                                    <a href="#">technology</a>
-                                </li>
-                                <li>
-                                    <a href="#">travel</a>
-                                </li>
-                                <li>
-                                    <a href="#">restaurant</a>
-                                </li>
-                                <li>
-                                    <a href="#">life style</a>
-                                </li>
-                                <li>
-                                    <a href="#">design</a>
-                                </li>
-                                <li>
-                                    <a href="#">illustration</a>
-                                </li>
+                                @endforeach
                             </ul>
                         </aside>
 

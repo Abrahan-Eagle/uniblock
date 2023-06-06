@@ -81,7 +81,7 @@
                    </div>
 
 
-
+                <!--
                    <div class="navigation-area">
                       <div class="row">
                          <div
@@ -124,12 +124,15 @@
                          </div>
                       </div>
                    </div>
+                -->
+
+
                 </div>
 
                 @foreach($author as $authors)
                 <div class="blog-author">
                    <div class="media align-items-center">
-                      <img src="{{ asset('uniblock/img/gallery/'), $authors->img }}" alt="">
+                      <img src="{{ asset('/uniblock/img/gallery/',$authors->img)}}" alt="">
                       <div class="media-body">
                          <a href="#">
                             <h4>{!! $authors->name !!}</h4>
@@ -141,6 +144,8 @@
                 @endforeach
 
 
+
+<!--
                 <div class="comments-area">
                    <h4>05 Comments</h4>
                    <div class="comment-list">
@@ -222,164 +227,127 @@
                       </div>
                    </div>
                 </div>
+            -->
+
+
+
+
+
+
+
+
                 <div class="comment-form">
-                   <h4>Leave a Reply</h4>
-                   <form class="form-contact comment_form" action="#" id="commentForm">
+                   <h4>Deja un comentario</h4>
+                   <form  class="form-contact comment_form"  action="{{ route('comment.submit', $post->id) }}" method="post" novalidate="novalidate" id="commentForm">
+                    @csrf
+                    <input class="form-control" name="_token" id="_token" type="hidden" value="{{csrf_token()}}">
+                    <input class="form-control" name="user_id" id="user_id" type="hidden" value="{{ $post->user_id }}">
                       <div class="row">
                          <div class="col-12">
                             <div class="form-group">
-                               <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="9"
-                                  placeholder="Write Comment"></textarea>
+                               <textarea class="form-control w-100" name="comment" id="comment" cols="30" rows="6" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Ingrese su mensaje'" placeholder='Ingrese su mensaje' required></textarea>
                             </div>
                          </div>
                          <div class="col-sm-6">
                             <div class="form-group">
-                               <input class="form-control" name="name" id="name" type="text" placeholder="Name">
+                               <input type="text" class="form-control" name="name" id="name" type="text" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Nombre'" placeholder='Nombre' required>
                             </div>
                          </div>
                          <div class="col-sm-6">
                             <div class="form-group">
-                               <input class="form-control" name="email" id="email" type="email" placeholder="Email">
+                               <input class="form-control" name="email" id="email" type="email" onfocus="this.placeholder = ''"
+                onblur="this.placeholder = 'Correo Electronico'" placeholder='Correo Electronico' required>
                             </div>
                          </div>
-                         <div class="col-12">
+                         <div class="col-6">
                             <div class="form-group">
-                               <input class="form-control" name="website" id="website" type="text" placeholder="Website">
+                                <input class="form-control" name="cell" id="cell" type="tel" pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}-[0-9]{4}" onfocus="this.placeholder = ''"
+                                onblur="this.placeholder = 'Teléfono Celular'" placeholder='Teléfono Celular'>
+                            </div>
+                         </div>
+                         <div class="col-6">
+                            <div class="form-group">
+                                <input class="form-control" name="website" id="website" type="url" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Página Web'" placeholder='Página Web'>
                             </div>
                          </div>
                       </div>
                       <div class="form-group">
-                         <button type="submit" class="button button-contactForm btn_1 boxed-btn">Post Comment</button>
+                        <button type="submit" class="button button-contactForm btn_1 boxed-btn">Publicar Comentario</button>
                       </div>
                    </form>
                 </div>
+
+
+
+
+
+
              </div>
              <div class="col-lg-4">
                 <div class="blog_right_sidebar">
                    <aside class="single_sidebar_widget search_widget">
-                      <form action="#">
+                    <form action="{{ URL::to('/blog') }}" method="GET" class="search-form">
                          <div class="form-group">
                             <div class="input-group mb-3">
-                               <input type="text" class="form-control" placeholder='Search Keyword'
-                                  onfocus="this.placeholder = ''" onblur="this.placeholder = 'Search Keyword'">
-                               <div class="input-group-append">
+                               <input type="text" name="search" id="search" class="form-control" placeholder='Buscar'
+                                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Buscar'">
+                                <div class="input-group-append">
                                   <button class="btns" type="button"><i class="ti-search"></i></button>
                                </div>
                             </div>
                          </div>
                          <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                            type="submit">Search</button>
+                            type="submit">Buscar</button>
                       </form>
                    </aside>
+
+
+
+
                    <aside class="single_sidebar_widget post_category_widget">
-                      <h4 class="widget_title" style="color: #2d2d2d;">Category</h4>
+                      <h4 class="widget_title" style="color: #2d2d2d;">Categorias</h4>
                       <ul class="list cat-list">
-                         <li>
-                            <a href="#" class="d-flex">
-                               <p>Resaurant food</p>
-                               <p>(37)</p>
-                            </a>
-                         </li>
-                         <li>
-                            <a href="#" class="d-flex">
-                               <p>Travel news</p>
-                               <p>(10)</p>
-                            </a>
-                         </li>
-                         <li>
-                            <a href="#" class="d-flex">
-                               <p>Modern technology</p>
-                               <p>(03)</p>
-                            </a>
-                         </li>
-                         <li>
-                            <a href="#" class="d-flex">
-                               <p>Product</p>
-                               <p>(11)</p>
-                            </a>
-                         </li>
-                         <li>
-                            <a href="#" class="d-flex">
-                               <p>Inspiration</p>
-                               <p>(21)</p>
-                            </a>
-                         </li>
-                         <li>
-                            <a href="#" class="d-flex">
-                               <p>Health Care</p>
-                               <p>(21)</p>
-                            </a>
-                         </li>
+
+                        @foreach ($categories as $category)
+                        <li><a  class="d-flex" href="{{ route('blog.categories', ['slug' => $category->slug]) }}">{{ $category->title }}
+                                <span>({{ count($category->posts) }})</span> </a></li>
+                        @endforeach
+
                       </ul>
                    </aside>
+
+
                    <aside class="single_sidebar_widget popular_post_widget">
-                      <h3 class="widget_title" style="color: #2d2d2d;">Recent Post</h3>
+                      <h3 class="widget_title" style="color: #160f0f;">Post Recientes</h3>
+
+
+                      @foreach ($recentpost as $recentposts)
                       <div class="media post_item">
-                         <img src="assets/img/post/post_1.png" alt="post">
-                         <div class="media-body">
-                            <a href="blog_details.html">
-                               <h3 style="color: #2d2d2d;">From life was you fish...</h3>
+                        <a href="{{ route('blog.post', ['slug' => $recentposts->slug]) }}">
+                            <img src="/uniblock/img/post/post_1.png" alt="post">
+                        </a>
+                        <div class="media-body">
+                            <a href="{{ route('blog.post', ['slug' => $recentposts->slug]) }}">
+                                <h3 style="color: #2d2d2d;">{!! substr($recentposts['title'], 0, 100) !!} </h3>
                             </a>
-                            <p>January 12, 2019</p>
+                            <p>{{ date('d M Y', strtotime($recentposts->created_at)) }}</p>
                          </div>
                       </div>
-                      <div class="media post_item">
-                         <img src="assets/img/post/post_2.png" alt="post">
-                         <div class="media-body">
-                            <a href="blog_details.html">
-                               <h3 style="color: #2d2d2d;">The Amazing Hubble</h3>
-                            </a>
-                            <p>02 Hours ago</p>
-                         </div>
-                      </div>
-                      <div class="media post_item">
-                         <img src="assets/img/post/post_3.png" alt="post">
-                         <div class="media-body">
-                            <a href="blog_details.html">
-                               <h3 style="color: #2d2d2d;">Astronomy Or Astrology</h3>
-                            </a>
-                            <p>03 Hours ago</p>
-                         </div>
-                      </div>
-                      <div class="media post_item">
-                         <img src="assets/img/post/post_4.png" alt="post">
-                         <div class="media-body">
-                            <a href="blog_details.html">
-                               <h3 style="color: #2d2d2d;">Asteroids telescope</h3>
-                            </a>
-                            <p>01 Hours ago</p>
-                         </div>
-                      </div>
+                      @endforeach
+
                    </aside>
                    <aside class="single_sidebar_widget tag_cloud_widget">
-                      <h4 class="widget_title" style="color: #2d2d2d;">Tag Clouds</h4>
+                      <h4 class="widget_title" style="color: #2d2d2d;">Etiquetas</h4>
                       <ul class="list">
-                         <li>
-                            <a href="#">project</a>
-                         </li>
-                         <li>
-                            <a href="#">love</a>
-                         </li>
-                         <li>
-                            <a href="#">technology</a>
-                         </li>
-                         <li>
-                            <a href="#">travel</a>
-                         </li>
-                         <li>
-                            <a href="#">restaurant</a>
-                         </li>
-                         <li>
-                            <a href="#">life style</a>
-                         </li>
-                         <li>
-                            <a href="#">design</a>
-                         </li>
-                         <li>
-                            <a href="#">illustration</a>
-                         </li>
+
+                        @foreach ($tags as $tag)
+                        <a href="{{ route('blog.tags', ['slug' => $tag->slug]) }}">{{ $tag->title }}</a>
+                        @endforeach
+
                       </ul>
                    </aside>
+
+
                    <aside class="single_sidebar_widget instagram_feeds">
                       <h4 class="widget_title" style="color: #2d2d2d;">Instagram Feeds</h4>
                       <ul class="instagram_row flex-wrap">
@@ -420,10 +388,10 @@
                       <form action="#">
                          <div class="form-group">
                             <input type="email" class="form-control" onfocus="this.placeholder = ''"
-                               onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
+                               onblur="this.placeholder = 'Email'" placeholder='Enter email' required>
                          </div>
                          <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                            type="submit">Subscribe</button>
+                            type="submit">Suscribir</button>
                       </form>
                    </aside>
                 </div>
