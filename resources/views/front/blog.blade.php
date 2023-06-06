@@ -23,148 +23,108 @@
             <div class="row">
                 <div class="col-lg-8 mb-5 mb-lg-0">
                     <div class="blog_left_sidebar">
+
+
+                        @if ($posts -> isNotEmpty())
+                        @foreach ($posts as $post)
                         <article class="blog_item">
                             <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="uniblock/img/blog/single_blog_1.png" alt="">
-                                <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
+                                <a href="{{ route('blog.post', $post->slug) }}">
+                                    <img class="card-img rounded-0" src="uniblock/img/blog/{{ $post -> img }}" alt="">
                                 </a>
+                                <span class="blog_item_date">
+                                    <h3>{{ date('d', strtotime($post -> created_at)) }}</h3>
+                                    <p>{{ date('M', strtotime($post -> created_at)) }}</p>
+                                </span>
                             </div>
                             <div class="blog_details">
-                                <a class="d-inline-block" href="blog_details.html">
-                                    <h2 class="blog-head" style="color: #2d2d2d;">Google inks pact for new 35-storey office</h2>
+                                <a class="d-inline-block" href="{{ route('blog.post', $post->slug) }}">
+                                    <h2 class="blog-head" style="color: #2d2d2d;">{!! substr($post['title'], 0, 63) !!}</h2>
+
+                                <a href="{{ route('blog.post', $post->slug) }}">
+                                    <p>{!! substr($post['excerpt'], 0, 250) !!}</p>
                                 </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
                                 <ul class="blog-info-link">
                                     <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
                                     <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
                                 </ul>
                             </div>
                         </article>
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="uniblock/img/blog/single_blog_2.png" alt="">
-                                <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a>
-                            </div>
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="blog_details.html">
-                                    <h2 class="blog-head" style="color: #2d2d2d;">Google inks pact for new 35-storey office</h2>
-                                </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                </ul>
-                            </div>
-                        </article>
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="uniblock/img/blog/single_blog_3.png" alt="">
-                                <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a>
-                            </div>
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="blog_details.html">
-                                    <h2 class="blog-head" style="color: #2d2d2d;">Google inks pact for new 35-storey office</h2>
-                                </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                </ul>
-                            </div>
-                        </article>
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="uniblock/img/blog/single_blog_4.png" alt="">
-                                <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a>
-                            </div>
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="blog_details.html">
-                                    <h2 class="blog-head" style="color: #2d2d2d;">Google inks pact for new 35-storey office</h2>
-                                </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                </ul>
-                            </div>
-                        </article>
-                        <article class="blog_item">
-                            <div class="blog_item_img">
-                                <img class="card-img rounded-0" src="uniblock/img/blog/single_blog_5.png" alt="">
-                                <a href="#" class="blog_item_date">
-                                    <h3>15</h3>
-                                    <p>Jan</p>
-                                </a>
-                            </div>
-                            <div class="blog_details">
-                                <a class="d-inline-block" href="blog_details.html">
-                                    <h2 class="blog-head" style="color: #2d2d2d;">Google inks pact for new 35-storey office</h2>
-                                </a>
-                                <p>That dominion stars lights dominion divide years for fourth have don't stars is that
-                                    he earth it first without heaven in place seed it second morning saying.</p>
-                                <ul class="blog-info-link">
-                                    <li><a href="#"><i class="fa fa-user"></i> Travel, Lifestyle</a></li>
-                                    <li><a href="#"><i class="fa fa-comments"></i> 03 Comments</a></li>
-                                </ul>
-                            </div>
-                        </article>
+
+                        @endforeach
+
+                        @else
+                            <h1>NO HAY RESULTADO</h1>
+                        @endif
+
+                        @if ($posts->hasPages())
                         <nav class="blog-pagination justify-content-center d-flex">
-                            <ul class="pagination">
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Previous">
-                                        <i class="ti-angle-left"></i>
-                                    </a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link">1</a>
-                                </li>
-                                <li class="page-item active">
-                                    <a href="#" class="page-link">2</a>
-                                </li>
-                                <li class="page-item">
-                                    <a href="#" class="page-link" aria-label="Next">
-                                        <i class="ti-angle-right"></i>
-                                    </a>
-                                </li>
-                            </ul>
+                          <ul class="pagination">
+
+                            @if ($posts->onFirstPage())
+                              <li class="disabled"><span>Atrás</span></li>
+                            @else
+                              <li><a href="{!! $posts->previousPageUrl() !!}">Atrás</a></li>
+                            @endif
+
+                            @if ($posts->onFirstPage())
+
+                            @else
+                              <li ><a  href="{!! $posts->previousPageUrl() !!}">{!! $posts->currentPage()-1 !!}</a></li>
+                            @endif
+
+                            <li class="active">
+                              <span >
+                                {!! $posts->currentPage() !!}
+                                <span class="sr-only">(current)</span>
+                              </span>
+                            </li>
+
+                            @if ($posts -> hasMorePages())
+                              <li ><a  href="{!! $posts->nextPageUrl() !!}">{!! $posts->currentPage()+1 !!}</a></li>
+                            @else
+
+                            @endif
+
+                            @if ($posts -> hasMorePages())
+                              <li ><a  href="{!! $posts->nextPageUrl() !!}">Sigs</a></li>
+                            @else
+                              <li class=" disabled"><span>Sigs</span></li>
+                            @endif
+                          </ul>
                         </nav>
+                      @endif
                     </div>
                 </div>
+
+
+
+
+
+
+
+
+
                 <div class="col-lg-4">
                     <div class="blog_right_sidebar">
                         <aside class="single_sidebar_widget search_widget">
                             <form action="#">
                                 <div class="form-group">
                                     <div class="input-group mb-3">
-                                        <input type="text" class="form-control" placeholder='Search Keyword'
+                                        <input type="text" class="form-control" placeholder='Buscar'
                                             onfocus="this.placeholder = ''"
-                                            onblur="this.placeholder = 'Search Keyword'">
+                                            onblur="this.placeholder = 'Buscar'">
                                         <div class="input-group-append">
                                             <button class="btns" type="button"><i class="ti-search"></i></button>
                                         </div>
                                     </div>
                                 </div>
                                 <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                                    type="submit">Search</button>
+                                    type="submit">Buscar</button>
                             </form>
                         </aside>
                         <aside class="single_sidebar_widget post_category_widget">
-                            <h4 class="widget_title" style="color: #2d2d2d;">Category</h4>
+                            <h4 class="widget_title" style="color: #2d2d2d;">Categoria</h4>
                             <ul class="list cat-list">
                                 <li>
                                     <a href="#" class="d-flex">
@@ -204,47 +164,9 @@
                                 </li>
                             </ul>
                         </aside>
-                        <aside class="single_sidebar_widget popular_post_widget">
-                            <h3 class="widget_title" style="color: #2d2d2d;">Recent Post</h3>
-                            <div class="media post_item">
-                                <img src="uniblock/img/post/post_1.png" alt="post">
-                                <div class="media-body">
-                                    <a href="blog_details.html">
-                                        <h3 style="color: #2d2d2d;">From life was you fish...</h3>
-                                    </a>
-                                    <p>January 12, 2019</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="uniblock/img/post/post_2.png" alt="post">
-                                <div class="media-body">
-                                    <a href="blog_details.html">
-                                        <h3 style="color: #2d2d2d;">The Amazing Hubble</h3>
-                                    </a>
-                                    <p>02 Hours ago</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="uniblock/img/post/post_3.png" alt="post">
-                                <div class="media-body">
-                                    <a href="blog_details.html">
-                                        <h3 style="color: #2d2d2d;">Astronomy Or Astrology</h3>
-                                    </a>
-                                    <p>03 Hours ago</p>
-                                </div>
-                            </div>
-                            <div class="media post_item">
-                                <img src="uniblock/img/post/post_4.png" alt="post">
-                                <div class="media-body">
-                                    <a href="blog_details.html">
-                                        <h3 style="color: #2d2d2d;">Asteroids telescope</h3>
-                                    </a>
-                                    <p>01 Hours ago</p>
-                                </div>
-                            </div>
-                        </aside>
+
                         <aside class="single_sidebar_widget tag_cloud_widget">
-                            <h4 class="widget_title" style="color: #2d2d2d;">Tag Clouds</h4>
+                            <h4 class="widget_title" style="color: #2d2d2d;">Etiquetas</h4>
                             <ul class="list">
                                 <li>
                                     <a href="#">project</a>
@@ -316,7 +238,7 @@
                                         onblur="this.placeholder = 'Enter email'" placeholder='Enter email' required>
                                 </div>
                                 <button class="button rounded-0 primary-bg text-white w-100 btn_1 boxed-btn"
-                                    type="submit">Subscribe</button>
+                                    type="submit">Suscribir</button>
                             </form>
                         </aside>
                     </div>
